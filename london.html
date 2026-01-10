@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>London 50th Birthday</title>
+<style>
+  :root {
+    --red: #E32017;
+    --blue: #0019A8;
+    --white: #ffffff;
+    --off-white: #f4f4f4;
+    --text: #222;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    background-color: var(--off-white);
+    color: var(--text);
+    padding-bottom: 80px;
+    line-height: 1.5;
+  }
+  /* Header Area */
+  header {
+    background: linear-gradient(135deg, var(--blue) 0%, #00127a 100%);
+    color: white;
+    padding: 20px 15px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+  h1 {
+    margin: 0; font-size: 1.5rem; letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .subtitle {
+    font-size: 0.9rem; opacity: 0.9; margin-top: 5px;
+    font-weight: bold; color: #FFD700; /* Gold */
+  }
+  
+  /* Sticky Tabs */
+  .tabs {
+    display: flex;
+    justify-content: space-between;
+    background: var(--white);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  .tab-btn {
+    flex: 1;
+    padding: 15px 0;
+    border: none;
+    background: transparent;
+    font-weight: 600;
+    color: #666;
+    font-size: 0.9rem;
+    border-bottom: 4px solid transparent;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  .tab-btn.active {
+    color: var(--red);
+    border-bottom: 4px solid var(--red);
+    background-color: rgba(227, 32, 23, 0.05);
+  }
+
+  /* Content Area */
+  .content { display: none; padding: 15px; animation: slideUp 0.3s ease-out; }
+  .content.active { display: block; }
+  
+  /* Cards */
+  .card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border-left: 6px solid var(--blue);
+    position: relative;
+  }
+  .card.birthday {
+    border-left-color: #FFD700;
+    background: #fffdf0;
+  }
+  .card.transit {
+    border-left-color: #007a33; /* District Green */
+  }
+
+  /* Typography */
+  h2 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    color: var(--blue);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  h2 a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 2px solid rgba(0, 25, 168, 0.1);
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 10px 0;
+    font-size: 0.85rem;
+  }
+  .badge {
+    background: #eee;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+  }
+  .badge.price { background: #e1f5fe; color: #0277bd; }
+  .badge.time { background: #ffebee; color: #c62828; }
+
+  /* Shopping List */
+  ul.checklist {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+  }
+  ul.checklist li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+  }
+  ul.checklist li:before {
+    content: "✅"; margin-right: 10px; font-size: 0.8rem;
+  }
+
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🇬🇧 London 2026</h1>
+  <div class="subtitle">🎂 The 50th Birthday Trip</div>
+</header>
+
+<div class="tabs">
+  <button class="tab-btn active" onclick="openTab('thu')">THU</button>
+  <button class="tab-btn" onclick="openTab('fri')">FRI</button>
+  <button class="tab-btn" onclick="openTab('sun')">SUN</button>
+  <button class="tab-btn" onclick="openTab('info')">🚇</button>
+</div>
+
+<!-- THURSDAY -->
+<div id="thu" class="content active">
+  <div class="card birthday">
+    <h2>🛒 Ray's Birthday List</h2>
+    <ul class="checklist">
+      <li>Bread & Milk</li>
+      <li>Butter</li>
+      <li>Instant Coffee</li>
+      <li>Buns</li>
+      <li><strong>Kimberley & Mikado Biscuits</strong> 🍪</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>👾 <a href="https://www.novelty-automation.com" target="_blank">Novelty Automation</a></h2>
+    <div class="meta">
+      <span class="badge time">12:00 – 20:00</span>
+      <span class="badge price">Free Entry</span>
+    </div>
+    <p>Satirical arcade machines. A fun, casual start to the trip!</p>
+    <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
+    <small>📍 <strong>Directions from Bow:</strong> District Line to Mile End -> Central Line to Holborn.</small>
+  </div>
+</div>
+
+<!-- FRIDAY -->
+<div id="fri" class="content">
+  <div class="card">
+    <h2>🇬🇧 <a href="https://www.iwm.org.uk/visits/churchill-war-rooms" target="_blank">Churchill War Rooms</a></h2>
+    <div class="meta">
+      <span class="badge time">09:30 AM</span>
+      <span class="badge price">Booked?</span>
+    </div>
+    <p><strong>Step 1:</strong> District Line (Green) from Bow Road -> Westminster (31 mins).</p>
+  </div>
+
+  <div class="card">
+    <h2>🔦 <a href="https://www.ltmuseum.co.uk/hidden-london" target="_blank">Hidden London (Down St)</a></h2>
+    <div class="meta">
+      <span class="badge time">Afternoon</span>
+      <span class="badge">Mayfair</span>
+    </div>
+    <p>Walk through St James's Park to Green Park area.</p>
+  </div>
+
+  <div class="card">
+    <h2>🏛️ <a href="https://www.britishmuseum.org" target="_blank">British Museum</a></h2>
+    <div class="meta">
+      <span class="badge time">Open till 20:30</span>
+    </div>
+    <p>Late night opening. Less crowds.</p>
+  </div>
+</div>
+
+<!-- SUNDAY -->
+<div id="sun" class="content">
+  <div class="card">
+    <h2>🏺 <a href="https://www.soane.org" target="_blank">Sir John Soane's</a></h2>
+    <div class="meta">
+      <span class="badge time">10:00 AM</span>
+      <span class="badge">Holborn</span>
+    </div>
+    <p>Arrive early to beat the queue.</p>
+  </div>
+
+  <div class="card">
+    <h2>⚡ <a href="https://www.vam.ac.uk/east" target="_blank">V&A East Storehouse</a></h2>
+    <div class="meta">
+      <span class="badge time">Afternoon</span>
+      <span class="badge">Stratford</span>
+    </div>
+    <p>Includes the <strong>David Bowie Centre</strong>.</p>
+    <p><em>Travel: Central Line to Stratford.</em></p>
+  </div>
+</div>
+
+<!-- TRANSIT -->
+<div id="info" class="content">
+  <div class="card transit">
+    <h2>🏠 Bow Road (Zone 2)</h2>
+    <p><strong>🟢 District Line:</strong> Your main route West.</p>
+    <p><strong>🌸 Hammersmith Line:</strong> Alternative route.</p>
+  </div>
+  <div class="card">
+    <h2>⚠️ Last Trains Home</h2>
+    <p><strong>From Central:</strong> ~00:14</p>
+    <p><strong>From East:</strong> ~01:03</p>
+  </div>
+</div>
+
+<script>
+  function openTab(tabId) {
+    // Remove active class from all
+    document.querySelectorAll('.content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+    
+    // Add active to selected
+    document.getElementById(tabId).classList.add('active');
+    
+    // Highlight button
+    const buttons = document.querySelectorAll('.tab-btn');
+    if(tabId === 'thu') buttons[0].classList.add('active');
+    if(tabId === 'fri') buttons[1].classList.add('active');
+    if(tabId === 'sun') buttons[2].classList.add('active');
+    if(tabId === 'info') buttons[3].classList.add('active');
+    
+    // Scroll to top
+    window.scrollTo(0,0);
+  }
+</script>
+</body>
+</html>
