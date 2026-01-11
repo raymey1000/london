@@ -11,6 +11,7 @@
     --white: #ffffff;
     --off-white: #f4f4f4;
     --text: #222;
+    --gold: #FFD700;
   }
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -34,9 +35,20 @@
   }
   .subtitle {
     font-size: 0.9rem; opacity: 0.9; margin-top: 5px;
-    font-weight: bold; color: #FFD700; /* Gold */
+    font-weight: bold; color: var(--gold);
   }
   
+  /* Urgent Alert */
+  .global-alert {
+    background: var(--red);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    animation: pulse 2s infinite;
+  }
+
   /* Sticky Tabs */
   .tabs {
     display: flex;
@@ -80,7 +92,7 @@
     position: relative;
   }
   .card.birthday {
-    border-left-color: #FFD700;
+    border-left-color: var(--gold);
     background: #fffdf0;
   }
   .card.transit {
@@ -137,10 +149,12 @@
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
   }
+  @keyframes pulse {
+    0% { opacity: 1; } 50% { opacity: 0.8; } 100% { opacity: 1; }
+  }
 </style>
 </head>
 <body>
-
 <header>
   <h1>🇬🇧 London 2026</h1>
   <div class="subtitle">🎂 The 50th Birthday Trip</div>
@@ -181,6 +195,36 @@
 <!-- FRIDAY -->
 <div id="fri" class="content">
   <div class="card">
+    <h2>🏺 <a href="https://www.soane.org" target="_blank">Sir John Soane's</a></h2>
+    <div class="meta">
+      <span class="badge time">10:00 AM</span>
+      <span class="badge">Holborn</span>
+    </div>
+    <p><strong>Start here.</strong> Arrive early to beat the queue.</p>
+    <p><em>Travel: Central Line to Holborn.</em></p>
+  </div>
+
+  <div class="card">
+    <h2>🔦 <a href="https://www.ltmuseum.co.uk/hidden-london" target="_blank">Hidden London (Down St)</a></h2>
+    <div class="meta">
+      <span class="badge time">Afternoon</span>
+      <span class="badge">Mayfair</span>
+    </div>
+    <p>Take <strong>Piccadilly Line</strong> from Holborn to Green Park (2 stops).</p>
+  </div>
+
+  <div class="card">
+    <h2>🏛️ <a href="https://www.britishmuseum.org" target="_blank">British Museum</a></h2>
+    <div class="meta">
+      <span class="badge time">Open till 20:30</span>
+    </div>
+    <p>Return to Holborn for the late night opening.</p>
+  </div>
+</div>
+
+<!-- SUNDAY -->
+<div id="sun" class="content">
+  <div class="card">
     <h2>🇬🇧 <a href="https://www.iwm.org.uk/visits/churchill-war-rooms" target="_blank">Churchill War Rooms</a></h2>
     <div class="meta">
       <span class="badge time">09:30 AM</span>
@@ -190,42 +234,13 @@
   </div>
 
   <div class="card">
-    <h2>🔦 <a href="https://www.ltmuseum.co.uk/hidden-london" target="_blank">Hidden London (Down St)</a></h2>
-    <div class="meta">
-      <span class="badge time">Afternoon</span>
-      <span class="badge">Mayfair</span>
-    </div>
-    <p>Walk through St James's Park to Green Park area.</p>
-  </div>
-
-  <div class="card">
-    <h2>🏛️ <a href="https://www.britishmuseum.org" target="_blank">British Museum</a></h2>
-    <div class="meta">
-      <span class="badge time">Open till 20:30</span>
-    </div>
-    <p>Late night opening. Less crowds.</p>
-  </div>
-</div>
-
-<!-- SUNDAY -->
-<div id="sun" class="content">
-  <div class="card">
-    <h2>🏺 <a href="https://www.soane.org" target="_blank">Sir John Soane's</a></h2>
-    <div class="meta">
-      <span class="badge time">10:00 AM</span>
-      <span class="badge">Holborn</span>
-    </div>
-    <p>Arrive early to beat the queue.</p>
-  </div>
-
-  <div class="card">
     <h2>⚡ <a href="https://www.vam.ac.uk/east" target="_blank">V&A East Storehouse</a></h2>
     <div class="meta">
       <span class="badge time">Afternoon</span>
       <span class="badge">Stratford</span>
     </div>
+    <p><strong>Step 2:</strong> Take <strong>Jubilee Line</strong> (Grey) from Westminster -> Stratford. Direct & Fast!</p>
     <p>Includes the <strong>David Bowie Centre</strong>.</p>
-    <p><em>Travel: Central Line to Stratford.</em></p>
   </div>
 </div>
 
