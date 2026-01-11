@@ -12,6 +12,7 @@
     --off-white: #f4f4f4;
     --text: #222;
     --gold: #FFD700;
+    --green: #008000;
   }
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -43,10 +44,11 @@
     background: var(--red);
     color: white;
     text-align: center;
-    padding: 10px;
+    padding: 12px;
     font-weight: bold;
     font-size: 0.9rem;
     animation: pulse 2s infinite;
+    border-bottom: 2px solid darkred;
   }
 
   /* Sticky Tabs */
@@ -128,6 +130,10 @@
   }
   .badge.price { background: #e1f5fe; color: #0277bd; }
   .badge.time { background: #ffebee; color: #c62828; }
+  
+  /* Status Badges */
+  .badge.booked { background: #e8f5e9; color: #2e7d32; border: 1px solid #c8e6c9; }
+  .badge.urgent { background: #ffebee; color: #c62828; border: 1px solid #ffcdd2; animation: pulse 2s infinite; }
 
   /* Shopping List */
   ul.checklist {
@@ -155,6 +161,9 @@
 </style>
 </head>
 <body>
+
+<div class="global-alert">⚠️ URGENT: BOOK WAR ROOMS & HIDDEN LONDON NOW!</div>
+
 <header>
   <h1>🇬🇧 London 2026</h1>
   <div class="subtitle">🎂 The 50th Birthday Trip</div>
@@ -208,17 +217,14 @@
     <h2>🔦 <a href="https://www.ltmuseum.co.uk/hidden-london" target="_blank">Hidden London (Down St)</a></h2>
     <div class="meta">
       <span class="badge time">Afternoon</span>
-      <span class="badge">Mayfair</span>
+      <span class="badge urgent">⚠️ BOOK ASAP</span>
     </div>
     <p>Take <strong>Piccadilly Line</strong> from Holborn to Green Park (2 stops).</p>
   </div>
 
-  <div class="card">
-    <h2>🏛️ <a href="https://www.britishmuseum.org" target="_blank">British Museum</a></h2>
-    <div class="meta">
-      <span class="badge time">Open till 20:30</span>
-    </div>
-    <p>Return to Holborn for the late night opening.</p>
+  <div class="card birthday">
+    <h2> <a href="https://www.morganarmsbow.com" target="_blank"> British Pub for High Quality Grub and Fun</a></h2>
+    <p>Head to Morgan Arms, 5 minutes from Bow Street Station</p>
   </div>
 </div>
 
@@ -228,19 +234,24 @@
     <h2>🇬🇧 <a href="https://www.iwm.org.uk/visits/churchill-war-rooms" target="_blank">Churchill War Rooms</a></h2>
     <div class="meta">
       <span class="badge time">09:30 AM</span>
-      <span class="badge price">Booked?</span>
+      <span class="badge urgent">⚠️ BOOK ASAP</span>
     </div>
     <p><strong>Step 1:</strong> District Line (Green) from Bow Road -> Westminster (31 mins).</p>
   </div>
 
+  <div class="card transit">
+    <h2>🚇 Transit to Museum</h2>
+    <p><strong>Route:</strong> Westminster -> Green Park (Jubilee) -> Holborn (Piccadilly).</p>
+    <p>⏱️ <strong>Time:</strong> ~20 Minutes.</p>
+  </div>
+
   <div class="card">
-    <h2>⚡ <a href="https://www.vam.ac.uk/east" target="_blank">V&A East Storehouse</a></h2>
+    <h2>🏛️ <a href="https://www.britishmuseum.org" target="_blank">British Museum</a></h2>
     <div class="meta">
-      <span class="badge time">Afternoon</span>
-      <span class="badge">Stratford</span>
+      <span class="badge time">1:00 PM</span>
+      <span class="badge booked">✅ BOOKED</span>
     </div>
-    <p><strong>Step 2:</strong> Take <strong>Jubilee Line</strong> (Grey) from Westminster -> Stratford. Direct & Fast!</p>
-    <p>Includes the <strong>David Bowie Centre</strong>.</p>
+    <p><strong>Entry Confirmed.</strong></p>
   </div>
 </div>
 
